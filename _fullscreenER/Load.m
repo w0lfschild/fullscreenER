@@ -6,14 +6,19 @@
 //  Copyright (c) 2015 Wolfgang. All rights reserved.
 //
 
-#import "Load.h"
 #import "ZKSwizzle.h"
 @import AppKit;
 
 BOOL _isMaximized = NO;
 BOOL _willMaximize = NO;
+
+BOOL _makecopy = YES;
+
 NSInteger osx_ver;
 struct CGRect _cachedFrame;
+
+@interface Load : NSObject
+@end
 
 //@implementation NSView (ViewHierarchyLogging)
 //- (void)logViewHierarchy
@@ -46,6 +51,9 @@ struct CGRect _cachedFrame;
              NSResizableWindowMask |
              NSFullSizeContentViewWindowMask;
              */
+            
+            NSButton *FS = [[NSButton alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+            [win.contentView.superview addSubview:FS];
         }
     }
 
@@ -101,7 +109,7 @@ ZKSwizzleInterface(_Maximize_NSWindow, NSWindow, NSResponder);
 }
 
 - (BOOL)showsFullScreenButton {
-    return NO;
+    return YES;
 }
 
 - (BOOL)_canEnterFullScreenOrTileMode {
@@ -131,39 +139,34 @@ ZKSwizzleInterface(_Maximize_NSWindow, NSWindow, NSResponder);
     NSWindow *this = (NSWindow*)self;
     
     if ([this _inFullScreen]) {
-        
         [this toggleFullScreen:this];
-        
     } else {
-        
+        CGRect maxFrame;
+        if (osx_ver < 11) {
+            maxFrame = [this _frameForFullScreenMode];
+        } else {
+            maxFrame = [this _tileFrameForFullScreen];
+        }
         if (!_isMaximized) {
-            _isMaximized = YES;
             _cachedFrame = this.frame;
-            if (osx_ver < 11) {
-                // 10.10
-                [this setFrame:[this _frameForFullScreenMode] display:true animate:true];
-            } else {
-                // 10.11+
-                [this setFrame:[this _tileFrameForFullScreen] display:true animate:true];
-            }
+            _isMaximized = YES;
+            [this setFrame:maxFrame display:true animate:true];
         } else {
             _isMaximized = NO;
             [this setFrame:_cachedFrame display:true animate:true];
         }
-        
     }
 }
 
 - (BOOL)_zoomButtonIsFullScreenButton {
-    NSWindow *this = (NSWindow*)self;
-    
+    NSButton *zoom = [(NSWindow*)self standardWindowButton:NSWindowZoomButton];
     if (([[NSApp currentEvent] modifierFlags] & NSAlternateKeyMask) == NSAlternateKeyMask) {
-        [[this standardWindowButton:NSWindowZoomButton] setAction:@selector(_W0fullScreen)];
-        [[this standardWindowButton:NSWindowZoomButton] setAlphaValue:.5 ];
+        [zoom setAction:@selector(_W0fullScreen)];
+        [zoom setAlphaValue:.5 ];
         //        NSLog(@"Fullscreen");
     } else {
-        [[this standardWindowButton:NSWindowZoomButton] setAction:@selector(_W0fillScreen)];
-        [[this standardWindowButton:NSWindowZoomButton] setAlphaValue:1 ];
+        [zoom setAction:@selector(_W0fillScreen)];
+        [zoom setAlphaValue:1 ];
         //        NSLog(@"Plus");
     }
     

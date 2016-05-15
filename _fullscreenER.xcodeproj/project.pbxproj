@@ -12,7 +12,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FB7B841C1BA4B7C3005398D1 /* Load.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Load.h; path = _fullscreenER/Load.h; sourceTree = "<group>"; };
 		FB7B841E1BA4B7C3005398D1 /* ZKSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKSwizzle.h; sourceTree = "<group>"; };
 		FB7B841F1BA4B7C3005398D1 /* ZKSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKSwizzle.m; sourceTree = "<group>"; };
 		FB7B84201BA4B7C3005398D1 /* Load.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Load.m; path = _fullscreenER/Load.m; sourceTree = "<group>"; };
@@ -35,7 +34,6 @@
 			isa = PBXGroup;
 			children = (
 				FB7B841D1BA4B7C3005398D1 /* ZKSwizzle */,
-				FB7B841C1BA4B7C3005398D1 /* Load.h */,
 				FB7B84201BA4B7C3005398D1 /* Load.m */,
 				FB7B84211BA4B7C3005398D1 /* Info.plist */,
 			);
@@ -243,7 +241,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = _fullscreenER/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.w0lf.-sphook";
+				PRODUCT_BUNDLE_IDENTIFIER = org.w0lf._fullscreenER;
 				PRODUCT_NAME = _fullscreenER;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
@@ -256,7 +254,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = _fullscreenER/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.w0lf.-sphook";
+				PRODUCT_BUNDLE_IDENTIFIER = org.w0lf._fullscreenER;
 				PRODUCT_NAME = _fullscreenER;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;

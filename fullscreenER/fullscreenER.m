@@ -98,7 +98,7 @@ static void *cachedFrame = &cachedFrame;
         [[self standardWindowButton:NSWindowZoomButton] setAction:@selector(wb_fillScreen)];
         [[self standardWindowButton:NSWindowZoomButton] setAlphaValue:1 ];
     }
-    return ZKOrig(BOOL);
+    return NO;
 }
 
 @end

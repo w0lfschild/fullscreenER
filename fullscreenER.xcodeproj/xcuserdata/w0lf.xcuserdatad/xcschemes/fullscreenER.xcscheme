@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0730"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FBFEDC1F1BA261DE009B4689"
-               BuildableName = "_fullscreenER.bundle"
-               BlueprintName = "_fullscreenER"
-               ReferencedContainer = "container:_fullscreenER.xcodeproj">
+               BlueprintIdentifier = "FBB53C931D0BC99600DD182D"
+               BuildableName = "fullscreenER.bundle"
+               BlueprintName = "fullscreenER"
+               ReferencedContainer = "container:fullscreenER.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,10 +45,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FBFEDC1F1BA261DE009B4689"
-            BuildableName = "_fullscreenER.bundle"
-            BlueprintName = "_fullscreenER"
-            ReferencedContainer = "container:_fullscreenER.xcodeproj">
+            BlueprintIdentifier = "FBB53C931D0BC99600DD182D"
+            BuildableName = "fullscreenER.bundle"
+            BlueprintName = "fullscreenER"
+            ReferencedContainer = "container:fullscreenER.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -63,10 +63,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FBFEDC1F1BA261DE009B4689"
-            BuildableName = "_fullscreenER.bundle"
-            BlueprintName = "_fullscreenER"
-            ReferencedContainer = "container:_fullscreenER.xcodeproj">
+            BlueprintIdentifier = "FBB53C931D0BC99600DD182D"
+            BuildableName = "fullscreenER.bundle"
+            BlueprintName = "fullscreenER"
+            ReferencedContainer = "container:fullscreenER.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

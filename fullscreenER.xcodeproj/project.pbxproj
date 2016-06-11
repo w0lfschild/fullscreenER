@@ -7,20 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FB7B84221BA4B7C3005398D1 /* ZKSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7B841F1BA4B7C3005398D1 /* ZKSwizzle.m */; };
-		FB7B84231BA4B7C3005398D1 /* Load.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7B84201BA4B7C3005398D1 /* Load.m */; };
+		FBB53C9C1D0BC9B400DD182D /* ZKSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB53C9B1D0BC9B400DD182D /* ZKSwizzle.m */; };
+		FBB53C9F1D0BC9EF00DD182D /* fullscreenER.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB53C9E1D0BC9EF00DD182D /* fullscreenER.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FB7B841E1BA4B7C3005398D1 /* ZKSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKSwizzle.h; sourceTree = "<group>"; };
-		FB7B841F1BA4B7C3005398D1 /* ZKSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKSwizzle.m; sourceTree = "<group>"; };
-		FB7B84201BA4B7C3005398D1 /* Load.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Load.m; path = _fullscreenER/Load.m; sourceTree = "<group>"; };
-		FB7B84211BA4B7C3005398D1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = _fullscreenER/Info.plist; sourceTree = "<group>"; };
-		FBFEDC201BA261DE009B4689 /* _fullscreenER.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = _fullscreenER.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBB53C941D0BC99600DD182D /* fullscreenER.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fullscreenER.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBB53C9A1D0BC9B400DD182D /* ZKSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZKSwizzle.h; path = ZKSwizzle/ZKSwizzle.h; sourceTree = "<group>"; };
+		FBB53C9B1D0BC9B400DD182D /* ZKSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZKSwizzle.m; path = ZKSwizzle/ZKSwizzle.m; sourceTree = "<group>"; };
+		FBB53C9D1D0BC9EF00DD182D /* fullscreenER.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fullscreenER.h; sourceTree = "<group>"; };
+		FBB53C9E1D0BC9EF00DD182D /* fullscreenER.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fullscreenER.m; sourceTree = "<group>"; };
+		FBB53CA11D0BCB8B00DD182D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		FBFEDC1D1BA261DE009B4689 /* Frameworks */ = {
+		FBB53C911D0BC99600DD182D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -30,30 +31,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FB7B841B1BA4B7B4005398D1 /* _fullscreenER */ = {
+		FBB53C951D0BC99600DD182D /* fullscreenER */ = {
 			isa = PBXGroup;
 			children = (
-				FB7B841D1BA4B7C3005398D1 /* ZKSwizzle */,
-				FB7B84201BA4B7C3005398D1 /* Load.m */,
-				FB7B84211BA4B7C3005398D1 /* Info.plist */,
+				FBB53CA01D0BCA5E00DD182D /* ZKSwizzle */,
+				FBB53C9D1D0BC9EF00DD182D /* fullscreenER.h */,
+				FBB53C9E1D0BC9EF00DD182D /* fullscreenER.m */,
+				FBB53CA11D0BCB8B00DD182D /* Info.plist */,
 			);
-			name = _fullscreenER;
+			path = fullscreenER;
 			sourceTree = "<group>";
 		};
-		FB7B841D1BA4B7C3005398D1 /* ZKSwizzle */ = {
+		FBB53CA01D0BCA5E00DD182D /* ZKSwizzle */ = {
 			isa = PBXGroup;
 			children = (
-				FB7B841E1BA4B7C3005398D1 /* ZKSwizzle.h */,
-				FB7B841F1BA4B7C3005398D1 /* ZKSwizzle.m */,
+				FBB53C9A1D0BC9B400DD182D /* ZKSwizzle.h */,
+				FBB53C9B1D0BC9B400DD182D /* ZKSwizzle.m */,
 			);
 			name = ZKSwizzle;
-			path = _fullscreenER/ZKSwizzle;
 			sourceTree = "<group>";
 		};
 		FBFEDC171BA261DE009B4689 = {
 			isa = PBXGroup;
 			children = (
-				FB7B841B1BA4B7B4005398D1 /* _fullscreenER */,
+				FBB53C951D0BC99600DD182D /* fullscreenER */,
 				FBFEDC211BA261DE009B4689 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,7 +62,7 @@
 		FBFEDC211BA261DE009B4689 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FBFEDC201BA261DE009B4689 /* _fullscreenER.bundle */,
+				FBB53C941D0BC99600DD182D /* fullscreenER.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,22 +70,21 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FBFEDC1F1BA261DE009B4689 /* _fullscreenER */ = {
+		FBB53C931D0BC99600DD182D /* fullscreenER */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FBFEDC261BA261DF009B4689 /* Build configuration list for PBXNativeTarget "_fullscreenER" */;
+			buildConfigurationList = FBB53C971D0BC99600DD182D /* Build configuration list for PBXNativeTarget "fullscreenER" */;
 			buildPhases = (
-				FBFEDC1C1BA261DE009B4689 /* Sources */,
-				FBFEDC1D1BA261DE009B4689 /* Frameworks */,
-				FBFEDC1E1BA261DE009B4689 /* Resources */,
-				FBFEDC301BA27E46009B4689 /* Run Script */,
+				FBB53C901D0BC99600DD182D /* Sources */,
+				FBB53C911D0BC99600DD182D /* Frameworks */,
+				FBB53C921D0BC99600DD182D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = _fullscreenER;
-			productName = _sphook;
-			productReference = FBFEDC201BA261DE009B4689 /* _fullscreenER.bundle */;
+			name = fullscreenER;
+			productName = fullscreenER;
+			productReference = FBB53C941D0BC99600DD182D /* fullscreenER.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -96,12 +96,12 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Wolfgang Baird";
 				TargetAttributes = {
-					FBFEDC1F1BA261DE009B4689 = {
-						CreatedOnToolsVersion = 7.0;
+					FBB53C931D0BC99600DD182D = {
+						CreatedOnToolsVersion = 7.3;
 					};
 				};
 			};
-			buildConfigurationList = FBFEDC1B1BA261DE009B4689 /* Build configuration list for PBXProject "_fullscreenER" */;
+			buildConfigurationList = FBFEDC1B1BA261DE009B4689 /* Build configuration list for PBXProject "fullscreenER" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -113,13 +113,13 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FBFEDC1F1BA261DE009B4689 /* _fullscreenER */,
+				FBB53C931D0BC99600DD182D /* fullscreenER */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		FBFEDC1E1BA261DE009B4689 /* Resources */ = {
+		FBB53C921D0BC99600DD182D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -128,36 +128,51 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		FBFEDC301BA27E46009B4689 /* Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "cp -Rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\" /Library/Application\\ Support/SIMBL/Plugins";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		FBFEDC1C1BA261DE009B4689 /* Sources */ = {
+		FBB53C901D0BC99600DD182D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB7B84221BA4B7C3005398D1 /* ZKSwizzle.m in Sources */,
-				FB7B84231BA4B7C3005398D1 /* Load.m in Sources */,
+				FBB53C9C1D0BC9B400DD182D /* ZKSwizzle.m in Sources */,
+				FBB53C9F1D0BC9EF00DD182D /* fullscreenER.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		FBB53C981D0BC99600DD182D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = fullscreenER/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = org.w0lf.fullscreenER;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		FBB53C991D0BC99600DD182D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = fullscreenER/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = org.w0lf.fullscreenER;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 		FBFEDC241BA261DF009B4689 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -235,49 +250,22 @@
 			};
 			name = Release;
 		};
-		FBFEDC271BA261DF009B4689 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = _fullscreenER/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				PRODUCT_BUNDLE_IDENTIFIER = org.w0lf._fullscreenER;
-				PRODUCT_NAME = _fullscreenER;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		FBFEDC281BA261DF009B4689 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = _fullscreenER/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				PRODUCT_BUNDLE_IDENTIFIER = org.w0lf._fullscreenER;
-				PRODUCT_NAME = _fullscreenER;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FBFEDC1B1BA261DE009B4689 /* Build configuration list for PBXProject "_fullscreenER" */ = {
+		FBB53C971D0BC99600DD182D /* Build configuration list for PBXNativeTarget "fullscreenER" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBB53C981D0BC99600DD182D /* Debug */,
+				FBB53C991D0BC99600DD182D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FBFEDC1B1BA261DE009B4689 /* Build configuration list for PBXProject "fullscreenER" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FBFEDC241BA261DF009B4689 /* Debug */,
 				FBFEDC251BA261DF009B4689 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FBFEDC261BA261DF009B4689 /* Build configuration list for PBXNativeTarget "_fullscreenER" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FBFEDC271BA261DF009B4689 /* Debug */,
-				FBFEDC281BA261DF009B4689 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

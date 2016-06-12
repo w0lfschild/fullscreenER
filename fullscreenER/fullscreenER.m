@@ -19,11 +19,13 @@ static void *cachedFrame = &cachedFrame;
     osx_ver = [[NSProcessInfo processInfo] operatingSystemVersion].minorVersion;
     ZKSwizzle(fullscreenER_NSWindow, NSWindow);
     NSApplication *application = [NSApplication sharedApplication];
+    Boolean editMask = ![[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"%@/QtCore.framework/Versions/4/QtCore", [[NSBundle mainBundle] privateFrameworksPath]]];
     if ([application windows])
     {
         for (NSWindow *win in [application windows])
         {
-            win.styleMask = win.styleMask | NSResizableWindowMask;
+            if (editMask)
+                win.styleMask = win.styleMask | NSResizableWindowMask;
             Boolean lockButton = [win showsLockButton];
             [win setShowsLockButton:!lockButton];
             [win setShowsLockButton:lockButton];

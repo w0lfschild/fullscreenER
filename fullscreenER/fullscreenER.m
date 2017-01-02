@@ -8,30 +8,80 @@
 
 #import "fullscreenER.h"
 
+#define APP_BLACKLIST @[]
+#define CLS_BLACKLIST @[@"NSStatusBarWindow"]
+
+fullscreenER *plugin;
 BOOL _willMaximize = NO;
 NSInteger osx_ver;
+NSWindow *mykeyWindow;
 struct CGRect _currentFrame;
 static void *cachedFrame = &cachedFrame;
 
 @implementation fullscreenER
 
-+ (void)load {
++ (fullscreenER*) sharedInstance
+{
+    static fullscreenER* plugin = nil;
+    if (plugin == nil)
+        plugin = [[fullscreenER alloc] init];
+    return plugin;
+}
+
++ (void)load
+{
+    plugin = [fullscreenER sharedInstance];
     osx_ver = [[NSProcessInfo processInfo] operatingSystemVersion].minorVersion;
-    ZKSwizzle(fullscreenER_NSWindow, NSWindow);
-    NSApplication *application = [NSApplication sharedApplication];
-    Boolean editMask = ![[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"%@/QtCore.framework/Versions/4/QtCore", [[NSBundle mainBundle] privateFrameworksPath]]];
-    if ([application windows])
+    
+    if (osx_ver >= 9)
     {
-        for (NSWindow *win in [application windows])
+        if (![APP_BLACKLIST containsObject:[[NSBundle mainBundle] bundleIdentifier]])
         {
-            if (editMask)
-                win.styleMask = win.styleMask | NSResizableWindowMask;
-            Boolean lockButton = [win showsLockButton];
-            [win setShowsLockButton:!lockButton];
-            [win setShowsLockButton:lockButton];
+            ZKSwizzle(fullscreenER_NSWindow, NSWindow);
+            
+            for (NSWindow *win in [NSApp windows])
+                [plugin FSER_initialize:win];
+            
+            NSMenu *subMenu = [NSApp windowsMenu];
+            if (subMenu == nil)
+                subMenu = [NSApp mainMenu];
+            NSMenu *view = [[subMenu itemAtIndex:0] submenu];
+            [[view addItemWithTitle:@"Toggle Fullscreen" action:@selector(FSER_toggleFS:) keyEquivalent:@""] setTarget:plugin];
+            mykeyWindow = [NSApp mainWindow];
+            
+            NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+            [center addObserver:self selector:@selector(FSER_gainFocus:) name:NSWindowDidBecomeMainNotification object:nil];
+            [center addObserver:self selector:@selector(FSER_gainFocus:) name:NSWindowDidBecomeKeyNotification object:nil];
+            
+            NSLog(@"%@ loaded into %@ on macOS 10.%ld", [self class], [[NSBundle mainBundle] bundleIdentifier], (long)osx_ver);
+        } else {
+            NSLog(@"fullscreenER is blocked in this application because of issues");
         }
+    } else {
+        NSLog(@"fullscreenER is blocked in this application because of your version of macOS is too old");
     }
-    NSLog(@"OS X 10.%ld, fullscreenER loaded...", (long)osx_ver);
+}
+
+- (void)FSER_initialize:(NSWindow*)win
+{
+    if (![CLS_BLACKLIST containsObject:[win className]])
+    {
+        Boolean editMask = ![[NSFileManager defaultManager] fileExistsAtPath:[NSString stringWithFormat:@"%@/QtCore.framework/Versions/4/QtCore", [[NSBundle mainBundle] privateFrameworksPath]]];
+        if (editMask)
+            win.styleMask = win.styleMask | NSResizableWindowMask;
+        Boolean lockButton = [win showsLockButton];
+        [win setShowsLockButton:!lockButton];
+        [win setShowsLockButton:lockButton];
+    }
+}
+
++ (void)FSER_gainFocus:(NSNotification *)note {
+    mykeyWindow = [note object];
+}
+
+- (void)FSER_toggleFS:(id)sender {
+    if ([mykeyWindow isVisible])
+        [mykeyWindow toggleFullScreen:mykeyWindow];
 }
 
 @end

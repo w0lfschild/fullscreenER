@@ -18,7 +18,7 @@
 
 # Installation:
 
-1. Download [mySIMBL](https://github.com/w0lfschild/app_updates/raw/master/mySIMBL/mySIMBL_0.2.5.zip)
+1. Download [mySIMBL](https://github.com/w0lfschild/app_updates/raw/master/mySIMBL/mySIMBL_master.zip)
 2. Download [fullscreenER](https://github.com/w0lfschild/fullscreenER/raw/master/build/fullscreenER.zip)
 3. Unzip downloads
 4. Open `fullscreenER.bundle` with `mySIMBL.app`

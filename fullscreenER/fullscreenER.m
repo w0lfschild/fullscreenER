@@ -44,9 +44,8 @@ static void *cachedFrame = &cachedFrame;
             
             NSMenu *subMenu = [NSApp windowsMenu];
             if (subMenu == nil)
-                subMenu = [NSApp mainMenu];
-            NSMenu *view = [[subMenu itemAtIndex:0] submenu];
-            [[view addItemWithTitle:@"Toggle Fullscreen" action:@selector(FSER_toggleFS:) keyEquivalent:@""] setTarget:plugin];
+                subMenu = [[[NSApp mainMenu] itemAtIndex:0] submenu];            
+            [[subMenu addItemWithTitle:@"Toggle Fullscreen" action:@selector(FSER_toggleFS:) keyEquivalent:@""] setTarget:plugin];
             mykeyWindow = [NSApp mainWindow];
             
             NSNotificationCenter *center = [NSNotificationCenter defaultCenter];

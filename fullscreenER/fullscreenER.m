@@ -42,10 +42,13 @@ static void *cachedFrame = &cachedFrame;
             for (NSWindow *win in [NSApp windows])
                 [plugin FSER_initialize:win];
             
-            NSMenu *subMenu = [NSApp windowsMenu];
-            if (subMenu == nil)
-                subMenu = [[[NSApp mainMenu] itemAtIndex:0] submenu];            
-            [[subMenu addItemWithTitle:@"Toggle Fullscreen" action:@selector(FSER_toggleFS:) keyEquivalent:@""] setTarget:plugin];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                NSMenu *subMenu = [NSApp windowsMenu];
+                if (subMenu == nil)
+                    subMenu = [[[NSApp mainMenu] itemAtIndex:0] submenu];
+                [[subMenu addItemWithTitle:@"Toggle Fullscreen" action:@selector(FSER_toggleFS:) keyEquivalent:@""] setTarget:plugin];
+            });
+            
             mykeyWindow = [NSApp mainWindow];
             
             NSNotificationCenter *center = [NSNotificationCenter defaultCenter];

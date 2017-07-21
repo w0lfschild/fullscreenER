@@ -8,7 +8,7 @@
 
 #import "fullscreenER.h"
 
-#define APP_BLACKLIST @[]
+#define APP_BLACKLIST @[@"com.apple.notificationcenterui"]
 #define CLS_BLACKLIST @[@"NSStatusBarWindow"]
 
 fullscreenER *plugin;
@@ -20,23 +20,19 @@ static void *cachedFrame = &cachedFrame;
 
 @implementation fullscreenER
 
-+ (fullscreenER*) sharedInstance
-{
++ (fullscreenER*) sharedInstance {
     static fullscreenER* plugin = nil;
     if (plugin == nil)
         plugin = [[fullscreenER alloc] init];
     return plugin;
 }
 
-+ (void)load
-{
++ (void)load {
     plugin = [fullscreenER sharedInstance];
     osx_ver = [[NSProcessInfo processInfo] operatingSystemVersion].minorVersion;
     
-    if (osx_ver >= 9)
-    {
-        if (![APP_BLACKLIST containsObject:[[NSBundle mainBundle] bundleIdentifier]])
-        {
+    if (osx_ver >= 9) {
+        if (![APP_BLACKLIST containsObject:[[NSBundle mainBundle] bundleIdentifier]]) {
             ZKSwizzle(fullscreenER_NSWindow, NSWindow);
             
             for (NSWindow *win in [NSApp windows])

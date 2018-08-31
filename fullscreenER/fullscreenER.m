@@ -95,7 +95,7 @@ static void *cachedFrame = &cachedFrame;
 }
 
 - (BOOL)showsFullScreenButton {
-    return YES;
+    return NO;
 }
 
 - (BOOL)_canEnterFullScreenOrTileMode {
@@ -131,11 +131,11 @@ static void *cachedFrame = &cachedFrame;
         if (!isMaximized) {
             NSValue *cachedFrameValue = [NSValue valueWithRect:(NSRect)NSRectFromCGRect(_currentFrame)];
             objc_setAssociatedObject(self, cachedFrame, cachedFrameValue, OBJC_ASSOCIATION_RETAIN);
-            [self setFrame:futureFrame display:true animate:true];
+            [self setFrame:futureFrame display:true animate:false];
         } else {
             NSValue *cachedValue = objc_getAssociatedObject(self, cachedFrame);
             CGRect cachedFrame = NSRectToCGRect(cachedValue.rectValue);
-            [self setFrame:cachedFrame display:true animate:true];
+            [self setFrame:cachedFrame display:true animate:false];
         }
     }
 }

@@ -18,7 +18,7 @@
 
 # Installation:
 
-1. Download and install [MacForge](https://github.com/w0lfschild/app_updates/raw/master/MacForge/MacForge.zip)
+1. Download and open [MacForge](https://github.com/w0lfschild/app_updates/raw/master/MacForge/MacForge.zip)
 2. Install [fullscreenER](https://www.macenhance.com/mflink?macforge://github.com/w0lfschild/myRepo/raw/master/mytweaks/org.w0lf.fullscreenER)
 3. Restart Chrome
 

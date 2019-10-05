@@ -5,7 +5,7 @@
 # Information:
 
 - Designed for 10.10+
-- SIMBL plugin to improve the functionallity of the green maximize button on OS X
+- MacForge plugin to improve the functionallity of the green maximize button on OS X
 - Author: [w0lfschild](https://github.com/w0lfschild)
 
 # Notes:
@@ -18,11 +18,9 @@
 
 # Installation:
 
-1. Download [mySIMBL](https://github.com/w0lfschild/app_updates/raw/master/mySIMBL/mySIMBL_master.zip)
-2. Download [fullscreenER](https://github.com/w0lfschild/fullscreenER/raw/master/build/fullscreenER.zip)
-3. Unzip downloads
-4. Open `fullscreenER.bundle` with `mySIMBL.app`
-5. Restart Chrome
+1. Download and install [MacForge](https://github.com/w0lfschild/app_updates/raw/master/MacForge/MacForge.zip)
+2. Install [fullscreenER](https://www.macenhance.com/mflink?macforge://github.com/w0lfschild/myRepo/raw/master/mytweaks/org.w0lf.fullscreenER)
+3. Restart Chrome
 
 ### License:
 Pretty much the BSD license, just don't repackage it and call it your own please!    
